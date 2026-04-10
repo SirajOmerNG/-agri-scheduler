@@ -7,26 +7,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
-:root {
-  --soil:    #2C1810;
-  --earth:   #5C3D2E;
-  --wheat:   #D4A853;
-  --sage:    #6B8F71;
-  --sky:     #4A7FA5;
-  --cream:   #F5F0E8;
-  --paper:   #FFFDF7;
-  --mist:    #E8EEE4;
-  --danger:  #C0392B;
-  --warn:    #E67E22;
-  --ok:      #27AE60;
-  --border:  #D9D2C5;
-  --shadow:  rgba(44,24,16,0.12);
-  --r: 8px;
-}
+:root{--soil:#2C1810;--earth:#5C3D2E;--wheat:#D4A853;--sage:#6B8F71;--sky:#4A7FA5;--cream:#F5F0E8;--paper:#FFFDF7;--mist:#E8EEE4;--danger:#C0392B;--warn:#E67E22;--ok:#27AE60;--border:#D9D2C5;--shadow:rgba(44,24,16,0.12);--r:8px}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--soil);min-height:100vh}
-
-/* ── NAV ── */
 nav{background:var(--soil);color:var(--cream);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:58px;position:sticky;top:0;z-index:200;box-shadow:0 2px 12px rgba(0,0,0,.35)}
 .nav-brand{display:flex;align-items:center;gap:.6rem;font-family:'DM Serif Display',serif;font-size:1.25rem;color:var(--wheat)}
 .nav-brand svg{width:26px;height:26px;fill:var(--wheat)}
@@ -34,85 +17,52 @@ nav{background:var(--soil);color:var(--cream);padding:0 2rem;display:flex;align-
 .nav-tab{background:none;border:none;color:rgba(245,240,232,.6);font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:500;padding:.45rem .9rem;border-radius:6px;cursor:pointer;transition:all .2s}
 .nav-tab:hover,.nav-tab.active{background:rgba(212,168,83,.18);color:var(--wheat)}
 .nav-badge{background:var(--danger);color:#fff;border-radius:20px;font-size:.65rem;padding:1px 6px;margin-left:4px;vertical-align:middle}
-
-/* ── LAYOUT ── */
 .page{display:none;padding:2rem;max-width:1240px;margin:0 auto;animation:fadeUp .35s ease}
 .page.active{display:block}
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-
-/* ── DASHBOARD ── */
 .dash-header{margin-bottom:2rem}
 .dash-header h1{font-family:'DM Serif Display',serif;font-size:2.2rem;color:var(--soil)}
 .dash-header p{color:var(--earth);margin-top:.3rem;font-size:.95rem}
 .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem}
 .stat-card{background:var(--paper);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem 1.5rem;position:relative;overflow:hidden}
 .stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:var(--r) var(--r) 0 0}
-.stat-card.green::before{background:var(--ok)}
-.stat-card.amber::before{background:var(--warn)}
-.stat-card.red::before{background:var(--danger)}
-.stat-card.blue::before{background:var(--sky)}
+.stat-card.green::before{background:var(--ok)}.stat-card.amber::before{background:var(--warn)}.stat-card.red::before{background:var(--danger)}.stat-card.blue::before{background:var(--sky)}
 .stat-label{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--earth);margin-bottom:.5rem}
 .stat-value{font-family:'DM Serif Display',serif;font-size:2.2rem;color:var(--soil)}
 .stat-sub{font-size:.78rem;color:var(--earth);margin-top:.25rem}
-
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
 .card{background:var(--paper);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
 .card-header{padding:1rem 1.5rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
 .card-header h3{font-family:'DM Serif Display',serif;font-size:1.1rem}
 .card-body{padding:1.25rem 1.5rem}
-
-/* ── TABLE ── */
 table{width:100%;border-collapse:collapse;font-size:.85rem}
 th{background:var(--mist);text-align:left;padding:.6rem 1rem;font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--earth);border-bottom:2px solid var(--border)}
 td{padding:.65rem 1rem;border-bottom:1px solid var(--border);vertical-align:middle}
 tr:last-child td{border-bottom:none}
 tr:hover td{background:rgba(107,143,113,.06)}
-
-/* ── BADGES ── */
 .badge{display:inline-flex;align-items:center;gap:.3rem;padding:.2rem .65rem;border-radius:20px;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
-.badge-ok{background:#e8f5e9;color:#2e7d32}
-.badge-warn{background:#fff3e0;color:#e65100}
-.badge-danger{background:#fce4ec;color:#c62828}
-.badge-blue{background:#e3f2fd;color:#1565c0}
-.badge-purple{background:#f3e5f5;color:#6a1b9a}
-.badge-dot::before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor;display:inline-block}
-
-/* ── FORMS ── */
+.badge-ok{background:#e8f5e9;color:#2e7d32}.badge-warn{background:#fff3e0;color:#e65100}.badge-danger{background:#fce4ec;color:#c62828}.badge-blue{background:#e3f2fd;color:#1565c0}.badge-dot::before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor;display:inline-block}
 .form-section{background:var(--paper);border:1px solid var(--border);border-radius:var(--r);padding:2rem;margin-bottom:1.5rem}
 .form-section h3{font-family:'DM Serif Display',serif;font-size:1.2rem;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.form-grid.cols3{grid-template-columns:1fr 1fr 1fr}
 .form-group{display:flex;flex-direction:column;gap:.4rem}
 .form-group.full{grid-column:1/-1}
 label{font-size:.8rem;font-weight:600;color:var(--earth);text-transform:uppercase;letter-spacing:.06em}
 input,select,textarea{font-family:'DM Sans',sans-serif;font-size:.9rem;border:1px solid var(--border);border-radius:6px;padding:.55rem .85rem;background:#fff;color:var(--soil);transition:border .2s}
 input:focus,select:focus,textarea:focus{outline:none;border-color:var(--sage);box-shadow:0 0 0 3px rgba(107,143,113,.15)}
 textarea{resize:vertical;min-height:80px}
-
-/* ── BUTTONS ── */
 .btn{font-family:'DM Sans',sans-serif;font-weight:600;font-size:.85rem;border:none;border-radius:6px;padding:.6rem 1.35rem;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:.5rem}
-.btn-primary{background:var(--sage);color:#fff}
-.btn-primary:hover{background:#5a7d60;transform:translateY(-1px);box-shadow:0 4px 12px rgba(107,143,113,.3)}
-.btn-soil{background:var(--soil);color:var(--wheat)}
-.btn-soil:hover{background:var(--earth);transform:translateY(-1px)}
-.btn-outline{background:transparent;border:1.5px solid var(--border);color:var(--earth)}
-.btn-outline:hover{border-color:var(--sage);color:var(--sage)}
-.btn-danger{background:var(--danger);color:#fff}
-.btn-sm{padding:.35rem .85rem;font-size:.78rem}
-
-/* ── SCHEDULE CALENDAR ── */
+.btn-primary{background:var(--sage);color:#fff}.btn-primary:hover{background:#5a7d60;transform:translateY(-1px);box-shadow:0 4px 12px rgba(107,143,113,.3)}
+.btn-soil{background:var(--soil);color:var(--wheat)}.btn-soil:hover{background:var(--earth);transform:translateY(-1px)}
+.btn-outline{background:transparent;border:1.5px solid var(--border);color:var(--earth)}.btn-outline:hover{border-color:var(--sage);color:var(--sage)}
+.btn-danger{background:var(--danger);color:#fff}.btn-sm{padding:.35rem .85rem;font-size:.78rem}
 .cal-grid{display:grid;grid-template-columns:80px repeat(5,1fr);gap:2px;font-size:.75rem}
 .cal-time{color:var(--earth);text-align:right;padding-right:.5rem;padding-top:.25rem;font-family:'DM Mono',monospace;font-size:.7rem}
 .cal-header-day{background:var(--mist);text-align:center;padding:.5rem;font-weight:600;border-radius:4px 4px 0 0}
-.cal-slot{min-height:44px;border-radius:4px;border:1px solid transparent;position:relative;cursor:pointer}
-.cal-slot.empty{background:rgba(255,255,255,.5);border-color:var(--border)}
-.cal-slot.empty:hover{background:var(--mist)}
+.cal-slot{min-height:44px;border-radius:4px;border:1px solid transparent}
+.cal-slot.empty{background:rgba(255,255,255,.5);border-color:var(--border)}.cal-slot.empty:hover{background:var(--mist)}
 .cal-event{background:var(--sage);color:#fff;border-radius:4px;padding:.3rem .5rem;font-size:.72rem;margin:1px;line-height:1.3}
-.cal-event.urgent{background:var(--danger)}
-.cal-event.high{background:var(--warn)}
-.cal-event.buffer{background:var(--border);color:var(--earth);font-style:italic}
-
-/* ── OPTIMIZER ── */
+.cal-event.urgent{background:var(--danger)}.cal-event.high{background:var(--warn)}
 .opt-panel{background:var(--soil);color:var(--cream);border-radius:var(--r);padding:1.75rem;margin-bottom:1.5rem}
 .opt-panel h3{font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--wheat);margin-bottom:.5rem}
 .opt-panel p{font-size:.88rem;opacity:.8;margin-bottom:1.25rem;line-height:1.6}
@@ -121,41 +71,24 @@ textarea{resize:vertical;min-height:80px}
 .opt-param label{font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;opacity:.7}
 .opt-param input,.opt-param select{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:var(--cream);border-radius:6px;padding:.4rem .7rem;font-size:.85rem;width:120px}
 .opt-param input:focus,.opt-param select:focus{outline:none;border-color:var(--wheat)}
-
 .log-box{background:#0d1117;color:#7ee787;font-family:'DM Mono',monospace;font-size:.76rem;border-radius:var(--r);padding:1rem 1.25rem;max-height:200px;overflow-y:auto;line-height:1.7;margin-top:1rem}
-.log-box .log-info{color:#58a6ff}
-.log-box .log-warn{color:var(--warn)}
-.log-box .log-ok{color:#7ee787}
-
-/* ── PROGRESS ── */
+.log-box .log-info{color:#58a6ff}.log-box .log-warn{color:var(--warn)}.log-box .log-ok{color:#7ee787}
 .progress-bar{height:6px;background:var(--mist);border-radius:3px;overflow:hidden;margin:.4rem 0}
 .progress-fill{height:100%;border-radius:3px;transition:width .8s ease}
-.pf-green{background:var(--ok)}
-.pf-amber{background:var(--warn)}
-.pf-red{background:var(--danger)}
-.pf-blue{background:var(--sky)}
-
-/* ── ALERTS ── */
+.pf-green{background:var(--ok)}.pf-amber{background:var(--warn)}.pf-red{background:var(--danger)}.pf-blue{background:var(--sky)}
 .alert{border-radius:var(--r);padding:.85rem 1.1rem;margin-bottom:.75rem;display:flex;align-items:flex-start;gap:.75rem;font-size:.87rem;border-left:4px solid}
-.alert-danger{background:#fce4ec;border-color:var(--danger);color:#7b1a1a}
-.alert-warn{background:#fff8e1;border-color:var(--warn);color:#7c4000}
-.alert-ok{background:#e8f5e9;border-color:var(--ok);color:#1b5e20}
-.alert-info{background:#e3f2fd;border-color:var(--sky);color:#0d47a1}
+.alert-danger{background:#fce4ec;border-color:var(--danger);color:#7b1a1a}.alert-warn{background:#fff8e1;border-color:var(--warn);color:#7c4000}
+.alert-ok{background:#e8f5e9;border-color:var(--ok);color:#1b5e20}.alert-info{background:#e3f2fd;border-color:var(--sky);color:#0d47a1}
 .alert-icon{font-size:1rem;margin-top:1px}
-
-/* ── DEPLOY GUIDE ── */
+/* ✅ Storage banner */
+.storage-banner{background:#e8f5e9;border:1px solid #a5d6a7;border-radius:var(--r);padding:.65rem 1.1rem;font-size:.83rem;color:#1b5e20;display:flex;align-items:center;gap:.5rem;margin-bottom:1.25rem}
 .deploy-step{display:flex;gap:1.25rem;margin-bottom:1.5rem;align-items:flex-start}
 .step-num{background:var(--wheat);color:var(--soil);font-family:'DM Serif Display',serif;font-size:1.1rem;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;margin-top:2px}
 .step-body h4{font-weight:600;margin-bottom:.35rem}
 .step-body p{font-size:.87rem;color:var(--earth);line-height:1.6}
 code{font-family:'DM Mono',monospace;font-size:.82rem;background:var(--mist);padding:.15rem .4rem;border-radius:4px;color:var(--soil)}
 pre{background:#0d1117;color:#e6edf3;font-family:'DM Mono',monospace;font-size:.78rem;border-radius:var(--r);padding:1rem 1.25rem;overflow-x:auto;line-height:1.7;margin:.75rem 0}
-pre .c{color:#8b949e}
-pre .s{color:#a5d6ff}
-pre .k{color:#ff7b72}
-pre .f{color:#d2a8ff}
-
-/* ── PLATFORM CARDS ── */
+pre .c{color:#8b949e}pre .s{color:#a5d6ff}pre .k{color:#ff7b72}pre .f{color:#d2a8ff}
 .platform-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.25rem 0}
 .plat-card{border:1.5px solid var(--border);border-radius:var(--r);padding:1.25rem;background:var(--paper);transition:all .2s;cursor:pointer}
 .plat-card:hover,.plat-card.selected{border-color:var(--sage);background:rgba(107,143,113,.07);transform:translateY(-2px);box-shadow:0 6px 20px var(--shadow)}
@@ -163,27 +96,17 @@ pre .f{color:#d2a8ff}
 .plat-card p{font-size:.8rem;color:var(--earth);line-height:1.5}
 .plat-tag{display:inline-block;background:var(--mist);color:var(--earth);font-size:.68rem;padding:.15rem .5rem;border-radius:4px;margin:.3rem .2rem 0 0;font-weight:500}
 .plat-tag.free{background:#e8f5e9;color:#2e7d32}
-
-/* ── RESPONSIVE ── */
-@media(max-width:900px){.stats-row{grid-template-columns:repeat(2,1fr)}.two-col,.platform-grid{grid-template-columns:1fr}.form-grid,.form-grid.cols3{grid-template-columns:1fr}}
-@media(max-width:600px){.nav-tabs{display:none}.stats-row{grid-template-columns:1fr}}
-
-/* ── MODAL ── */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(44,24,16,.55);z-index:500;align-items:center;justify-content:center}
 .modal-overlay.open{display:flex}
 .modal{background:var(--paper);border-radius:12px;padding:2rem;max-width:520px;width:90%;max-height:85vh;overflow-y:auto;box-shadow:0 24px 60px rgba(0,0,0,.25)}
 .modal h3{font-family:'DM Serif Display',serif;font-size:1.4rem;margin-bottom:1.25rem}
 .modal-footer{display:flex;justify-content:flex-end;gap:.75rem;margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border)}
-
-/* ── TOOLTIP ── */
-[data-tip]{position:relative}
-[data-tip]::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:var(--soil);color:var(--cream);font-size:.72rem;padding:.3rem .6rem;border-radius:5px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .2s;z-index:100}
-[data-tip]:hover::after{opacity:1}
+@media(max-width:900px){.stats-row{grid-template-columns:repeat(2,1fr)}.two-col,.platform-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.nav-tabs{display:none}.stats-row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-brand">
     <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 18a8 8 0 110-16 8 8 0 010 16z"/></svg>
@@ -203,138 +126,70 @@ pre .f{color:#d2a8ff}
 <div class="page active" id="page-dashboard">
   <div class="dash-header">
     <h1>Research Consultation Dashboard</h1>
-    <p>Cloud-Based Scheduling Optimization Platform — minimizing lateness across all agricultural research consultations</p>
+    <p>Cloud-Based Scheduling Optimization — School of Computing, Southern Illinois University Carbondale</p>
   </div>
-
   <div class="stats-row">
-    <div class="stat-card green">
-      <div class="stat-label">Total Requests</div>
-      <div class="stat-value" id="stat-total">0</div>
-      <div class="stat-sub">active this week</div>
-    </div>
-    <div class="stat-card amber">
-      <div class="stat-label">Total Lateness</div>
-      <div class="stat-value" id="stat-lateness">0h</div>
-      <div class="stat-sub">∑Lᵢ across all tasks</div>
-    </div>
-    <div class="stat-card red">
-      <div class="stat-label">At Risk</div>
-      <div class="stat-value" id="stat-risk">0</div>
-      <div class="stat-sub">may miss deadline</div>
-    </div>
-    <div class="stat-card blue">
-      <div class="stat-label">Utilization</div>
-      <div class="stat-value" id="stat-util">0%</div>
-      <div class="stat-sub">statistician time used</div>
-    </div>
+    <div class="stat-card green"><div class="stat-label">Total Requests</div><div class="stat-value" id="stat-total">0</div><div class="stat-sub">saved in browser</div></div>
+    <div class="stat-card amber"><div class="stat-label">Total Lateness</div><div class="stat-value" id="stat-lateness">0h</div><div class="stat-sub">∑Lᵢ across all tasks</div></div>
+    <div class="stat-card red"><div class="stat-label">At Risk</div><div class="stat-value" id="stat-risk">0</div><div class="stat-sub">may miss deadline</div></div>
+    <div class="stat-card blue"><div class="stat-label">Utilization</div><div class="stat-value" id="stat-util">0%</div><div class="stat-sub">statistician time used</div></div>
   </div>
-
   <div class="two-col">
     <div class="card">
-      <div class="card-header">
-        <h3>Active Alerts</h3>
-        <button class="btn btn-outline btn-sm" onclick="showPage('requests')">View all</button>
-      </div>
-      <div class="card-body" id="alert-panel">
-        <p style="color:var(--earth);font-size:.87rem">No alerts. Run the optimizer to generate alerts.</p>
-      </div>
+      <div class="card-header"><h3>Active Alerts</h3><button class="btn btn-outline btn-sm" onclick="showPage('requests')">View all</button></div>
+      <div class="card-body" id="alert-panel"><p style="color:var(--earth);font-size:.87rem">No alerts. Run the optimizer to generate alerts.</p></div>
     </div>
     <div class="card">
       <div class="card-header"><h3>Upcoming Consultations</h3></div>
       <div class="card-body">
-        <table>
-          <thead><tr><th>Scientist</th><th>Type</th><th>Deadline</th><th>Status</th></tr></thead>
-          <tbody id="upcoming-table"><tr><td colspan="4" style="color:var(--earth);font-size:.85rem;padding:1rem">No consultations scheduled yet.</td></tr></tbody>
-        </table>
+        <table><thead><tr><th>Scientist</th><th>Type</th><th>Deadline</th><th>Status</th></tr></thead>
+        <tbody id="upcoming-table"><tr><td colspan="4" style="color:var(--earth);font-size:.85rem;padding:1rem">No consultations scheduled yet.</td></tr></tbody></table>
       </div>
     </div>
   </div>
-
   <div style="margin-top:1.5rem" class="card">
     <div class="card-header"><h3>Resource Utilization by Day</h3></div>
-    <div class="card-body" id="util-chart">
-      <p style="color:var(--earth);font-size:.87rem">Run the optimizer to see utilization breakdown.</p>
-    </div>
+    <div class="card-body" id="util-chart"><p style="color:var(--earth);font-size:.87rem">Run the optimizer to see utilization breakdown.</p></div>
   </div>
 </div>
 
 <!-- REQUESTS -->
 <div class="page" id="page-requests">
-  <div class="dash-header">
-    <h1>Consultation Requests</h1>
-    <p>Submit, view, and manage all scientist consultation requests.</p>
-  </div>
-
+  <div class="dash-header"><h1>Consultation Requests</h1><p>Submit, view, and manage all scientist consultation requests.</p></div>
+  <!-- ✅ AUTO-SAVE BANNER -->
+  <div class="storage-banner">💾 <strong>Auto-save ON</strong> — all requests are saved in your browser automatically. They will still be here after you close and reopen the app.</div>
   <div class="form-section">
     <h3>Submit New Request</h3>
     <div class="form-grid">
-      <div class="form-group">
-        <label>Scientist Name</label>
-        <input type="text" id="sci-name" placeholder="Dr. Jane Smith"/>
-      </div>
-      <div class="form-group">
-        <label>Scientist ID</label>
-        <input type="text" id="sci-id" placeholder="SCI-001"/>
-      </div>
-      <div class="form-group">
-        <label>Consultation Type</label>
+      <div class="form-group"><label>Scientist Name</label><input type="text" id="sci-name" placeholder="Dr. Jane Smith"/></div>
+      <div class="form-group"><label>Scientist ID</label><input type="text" id="sci-id" placeholder="SCI-001"/></div>
+      <div class="form-group"><label>Consultation Type</label>
         <select id="cons-type">
-          <option value="design">Experimental Design</option>
-          <option value="analysis">Data Analysis</option>
-          <option value="reporting">Statistical Reporting</option>
-          <option value="collection">Data Collection Review</option>
+          <option value="design">Experimental Design</option><option value="analysis">Data Analysis</option>
+          <option value="reporting">Statistical Reporting</option><option value="collection">Data Collection Review</option>
           <option value="modelling">Modelling Consultation</option>
         </select>
       </div>
-      <div class="form-group">
-        <label>Priority</label>
-        <select id="cons-priority">
-          <option value="urgent">Urgent</option>
-          <option value="high">High</option>
-          <option value="normal" selected>Normal</option>
-          <option value="routine">Routine</option>
-        </select>
+      <div class="form-group"><label>Priority</label>
+        <select id="cons-priority"><option value="urgent">Urgent</option><option value="high">High</option><option value="normal" selected>Normal</option><option value="routine">Routine</option></select>
       </div>
-      <div class="form-group">
-        <label>Deadline</label>
-        <input type="date" id="cons-deadline"/>
-      </div>
-      <div class="form-group">
-        <label>Estimated Duration (hours)</label>
-        <input type="number" id="cons-duration" value="1.5" min="0.5" max="8" step="0.5"/>
-      </div>
-      <div class="form-group">
-        <label>Preferred Time Window (start)</label>
-        <input type="time" id="pref-start" value="09:00"/>
-      </div>
-      <div class="form-group">
-        <label>Preferred Time Window (end)</label>
-        <input type="time" id="pref-end" value="17:00"/>
-      </div>
-      <div class="form-group full">
-        <label>Dependencies (task IDs, comma-separated)</label>
-        <input type="text" id="cons-deps" placeholder="e.g. REQ-001, REQ-003 (leave blank if none)"/>
-      </div>
-      <div class="form-group full">
-        <label>Research Notes</label>
-        <textarea id="cons-notes" placeholder="Describe the consultation context, data involved, or special requirements..."></textarea>
-      </div>
+      <div class="form-group"><label>Deadline</label><input type="date" id="cons-deadline"/></div>
+      <div class="form-group"><label>Estimated Duration (hours)</label><input type="number" id="cons-duration" value="1.5" min="0.5" max="8" step="0.5"/></div>
+      <div class="form-group"><label>Preferred Time Window (start)</label><input type="time" id="pref-start" value="09:00"/></div>
+      <div class="form-group"><label>Preferred Time Window (end)</label><input type="time" id="pref-end" value="17:00"/></div>
+      <div class="form-group full"><label>Dependencies (task IDs, comma-separated)</label><input type="text" id="cons-deps" placeholder="e.g. REQ-001, REQ-003 (leave blank if none)"/></div>
+      <div class="form-group full"><label>Research Notes</label><textarea id="cons-notes" placeholder="Describe the consultation context, data involved, or special requirements..."></textarea></div>
     </div>
     <div style="margin-top:1.25rem;display:flex;gap:.75rem">
       <button class="btn btn-primary" onclick="submitRequest()">➕ Submit Request</button>
       <button class="btn btn-outline" onclick="loadSampleData()">Load Sample Data (10 requests)</button>
     </div>
   </div>
-
   <div class="card">
-    <div class="card-header">
-      <h3>Request Queue</h3>
+    <div class="card-header"><h3>Request Queue</h3>
       <div style="display:flex;gap:.5rem">
         <select id="filter-status" onchange="renderRequests()" style="font-size:.8rem;padding:.3rem .6rem">
-          <option value="all">All</option>
-          <option value="pending">Pending</option>
-          <option value="scheduled">Scheduled</option>
-          <option value="late">Late</option>
+          <option value="all">All</option><option value="pending">Pending</option><option value="scheduled">Scheduled</option><option value="late">Late</option>
         </select>
         <button class="btn btn-danger btn-sm" onclick="clearRequests()">Clear All</button>
       </div>
@@ -350,37 +205,24 @@ pre .f{color:#d2a8ff}
 
 <!-- SCHEDULE -->
 <div class="page" id="page-schedule">
-  <div class="dash-header">
-    <h1>Optimized Schedule</h1>
-    <p>Weekly calendar view of all assigned consultations. Run the optimizer first to populate.</p>
-  </div>
+  <div class="dash-header"><h1>Optimized Schedule</h1><p>Weekly calendar view of assigned consultations. Run the optimizer first.</p></div>
   <div style="display:flex;gap:.75rem;margin-bottom:1.25rem;align-items:center">
     <button class="btn btn-primary" onclick="showPage('optimizer')">⚙ Run Optimizer</button>
-    <select id="stat-select" style="padding:.55rem .85rem;border:1px solid var(--border);border-radius:6px;font-size:.87rem">
-      <option value="all">All Statisticians</option>
-      <option value="stat1">Dr. Reed (Lead Statistician)</option>
-      <option value="stat2">Dr. Patel (Junior Statistician)</option>
-    </select>
     <span id="sched-summary" style="font-size:.85rem;color:var(--earth)"></span>
   </div>
-
   <div class="card">
     <div class="card-header"><h3>Week View</h3>
       <div style="display:flex;gap:.5rem">
         <span class="badge badge-ok badge-dot">Scheduled</span>
         <span class="badge badge-danger badge-dot">Urgent</span>
         <span class="badge badge-warn badge-dot">High Priority</span>
-        <span style="display:inline-flex;align-items:center;gap:.3rem;font-size:.72rem;color:var(--earth)"><span style="display:inline-block;width:10px;height:10px;background:var(--border);border-radius:2px"></span>Buffer</span>
       </div>
     </div>
     <div class="card-body" style="overflow-x:auto">
       <div class="cal-grid" id="calendar-grid">
         <div></div>
-        <div class="cal-header-day">Monday</div>
-        <div class="cal-header-day">Tuesday</div>
-        <div class="cal-header-day">Wednesday</div>
-        <div class="cal-header-day">Thursday</div>
-        <div class="cal-header-day">Friday</div>
+        <div class="cal-header-day">Monday</div><div class="cal-header-day">Tuesday</div>
+        <div class="cal-header-day">Wednesday</div><div class="cal-header-day">Thursday</div><div class="cal-header-day">Friday</div>
       </div>
       <div id="cal-body" style="margin-top:.5rem"></div>
       <p id="cal-empty" style="color:var(--earth);font-size:.87rem;padding:.5rem 0">No schedule yet — run the Optimizer tab to generate one.</p>
@@ -390,79 +232,36 @@ pre .f{color:#d2a8ff}
 
 <!-- OPTIMIZER -->
 <div class="page" id="page-optimizer">
-  <div class="dash-header">
-    <h1>Optimization Engine</h1>
-    <p>Configure and run the scheduling optimizer using the mathematical model from Dr. Reed's framework.</p>
-  </div>
-
+  <div class="dash-header"><h1>Optimization Engine</h1><p>Configure and run the scheduling optimizer — minimizing total lateness ∑Lᵢ across all consultations.</p></div>
   <div class="opt-panel">
     <h3>⚙ Optimization Parameters</h3>
-    <p>Configure the model parameters before running. The engine uses a modified Earliest-Deadline-First heuristic with Integer Programming re-optimization and stochastic buffer insertion (p'ᵢ = E[pᵢ] + α·σ(pᵢ)).</p>
+    <p>The engine uses a modified Earliest-Deadline-First heuristic with ILP re-optimization and stochastic buffer insertion (p'ᵢ = E[pᵢ] + α·σ(pᵢ)).</p>
     <div class="opt-controls">
-      <div class="opt-param">
-        <label>Max Meetings/Day</label>
-        <input type="number" id="p-maxmeet" value="6" min="1" max="12"/>
+      <div class="opt-param"><label>Max Meetings/Day</label><input type="number" id="p-maxmeet" value="6" min="1" max="12"/></div>
+      <div class="opt-param"><label>Buffer Time (min)</label><input type="number" id="p-buffer" value="15" min="0" max="60"/></div>
+      <div class="opt-param"><label>Risk Aversion (α)</label><input type="number" id="p-alpha" value="1.5" min="0" max="3" step="0.1"/></div>
+      <div class="opt-param"><label>Algorithm</label>
+        <select id="p-algo"><option value="edf">EDF Heuristic (fast)</option><option value="ilp" selected>ILP + EDF Hybrid</option><option value="genetic">Genetic Algorithm</option></select>
       </div>
-      <div class="opt-param">
-        <label>Buffer Time (min)</label>
-        <input type="number" id="p-buffer" value="15" min="0" max="60"/>
-      </div>
-      <div class="opt-param">
-        <label>Risk Aversion (α)</label>
-        <input type="number" id="p-alpha" value="1.5" min="0" max="3" step="0.1"/>
-      </div>
-      <div class="opt-param">
-        <label>Algorithm</label>
-        <select id="p-algo">
-          <option value="edf">EDF Heuristic (fast)</option>
-          <option value="ilp" selected>ILP + EDF Hybrid</option>
-          <option value="genetic">Genetic Algorithm</option>
-        </select>
-      </div>
-      <div class="opt-param">
-        <label>Priority Weight (w₁)</label>
-        <input type="number" id="p-w1" value="0.6" min="0" max="1" step="0.1"/>
-      </div>
-      <div style="margin-top:auto">
-        <button class="btn btn-soil" onclick="runOptimizer()" id="run-btn">▶ Run Optimizer</button>
-      </div>
+      <div class="opt-param"><label>Priority Weight (w₁)</label><input type="number" id="p-w1" value="0.6" min="0" max="1" step="0.1"/></div>
+      <div style="margin-top:auto"><button class="btn btn-soil" onclick="runOptimizer()" id="run-btn">▶ Run Optimizer</button></div>
     </div>
     <div id="opt-log" class="log-box" style="display:none"></div>
   </div>
-
   <div id="opt-results" style="display:none">
     <div class="two-col">
-      <div class="card">
-        <div class="card-header"><h3>Optimization Results</h3></div>
-        <div class="card-body" id="opt-metrics"></div>
-      </div>
-      <div class="card">
-        <div class="card-header"><h3>Schedule Summary</h3></div>
-        <div class="card-body" id="opt-schedule-summary"></div>
-      </div>
+      <div class="card"><div class="card-header"><h3>Optimization Results</h3></div><div class="card-body" id="opt-metrics"></div></div>
+      <div class="card"><div class="card-header"><h3>Schedule Summary</h3></div><div class="card-body" id="opt-schedule-summary"></div></div>
     </div>
   </div>
-
   <div class="card" style="margin-top:1.5rem">
     <div class="card-header"><h3>How the Algorithm Works</h3></div>
     <div class="card-body">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;font-size:.87rem;line-height:1.7;color:var(--earth)">
-        <div>
-          <strong style="color:var(--soil);display:block;margin-bottom:.5rem">Step 1 — EDF Heuristic (Initial Schedule)</strong>
-          Filter tasks with all dependencies met → sort by composite score Score = w₁ × (1/deadline) + w₂ × priority → assign to earliest available slot per statistician, respecting buffer and capacity constraints.
-        </div>
-        <div>
-          <strong style="color:var(--soil);display:block;margin-bottom:.5rem">Step 2 — ILP Re-optimization</strong>
-          Minimize Z = ∑Lᵢ subject to: assignment (each task once), capacity (one task per statistician per slot), completion time, lateness bounds, precedence, release dates, and daily meeting cap.
-        </div>
-        <div>
-          <strong style="color:var(--soil);display:block;margin-bottom:.5rem">Step 3 — Stochastic Buffer Insertion</strong>
-          Inflate scheduled durations: p'ᵢ = E[pᵢ] + α·σ(pᵢ). Default α = 1.5 means 90th-percentile coverage. Buffers absorb minor overruns without cascading lateness.
-        </div>
-        <div>
-          <strong style="color:var(--soil);display:block;margin-bottom:.5rem">Step 4 — Dynamic Rescheduling</strong>
-          If a task overruns buffer by >10 min, the engine re-optimizes only the affected window (same statistician, current + next day). Notifications are dispatched to all impacted scientists.
-        </div>
+        <div><strong style="color:var(--soil);display:block;margin-bottom:.5rem">Step 1 — EDF Heuristic</strong>Sort tasks by Score = w₁×(1/deadline) + w₂×priority → assign to earliest available slot.</div>
+        <div><strong style="color:var(--soil);display:block;margin-bottom:.5rem">Step 2 — ILP Re-optimization</strong>Minimize Z = ∑Lᵢ subject to assignment, capacity, lateness bounds, precedence, and daily caps.</div>
+        <div><strong style="color:var(--soil);display:block;margin-bottom:.5rem">Step 3 — Stochastic Buffer</strong>Inflate durations: p'ᵢ = E[pᵢ] + α·σ(pᵢ). α=1.5 gives 90th-percentile coverage.</div>
+        <div><strong style="color:var(--soil);display:block;margin-bottom:.5rem">Step 4 — Dynamic Rescheduling</strong>If overrun >10 min, re-optimize the disruption window and notify all affected scientists.</div>
       </div>
     </div>
   </div>
@@ -470,13 +269,8 @@ pre .f{color:#d2a8ff}
 
 <!-- REPORTS -->
 <div class="page" id="page-reports">
-  <div class="dash-header">
-    <h1>Reports & Analytics</h1>
-    <p>Performance metrics, risk analysis, and bottleneck identification.</p>
-  </div>
-  <div id="reports-empty" style="display:block">
-    <div class="alert alert-info"><span class="alert-icon">ℹ</span> Run the optimizer first to generate reports and analytics.</div>
-  </div>
+  <div class="dash-header"><h1>Reports & Analytics</h1><p>Performance metrics, risk analysis, and bottleneck identification.</p></div>
+  <div id="reports-empty"><div class="alert alert-info"><span class="alert-icon">ℹ</span> Run the optimizer first to generate reports and analytics.</div></div>
   <div id="reports-content" style="display:none">
     <div class="stats-row">
       <div class="stat-card green"><div class="stat-label">On Time</div><div class="stat-value" id="r-ontime">0</div><div class="stat-sub">consultations</div></div>
@@ -485,67 +279,29 @@ pre .f{color:#d2a8ff}
       <div class="stat-card blue"><div class="stat-label">Throughput</div><div class="stat-value" id="r-through">0</div><div class="stat-sub">consultations/week</div></div>
     </div>
     <div class="two-col">
-      <div class="card">
-        <div class="card-header"><h3>Lateness by Consultation Type</h3></div>
-        <div class="card-body" id="r-bytype"></div>
-      </div>
-      <div class="card">
-        <div class="card-header"><h3>Risk Report — Projects at Risk</h3></div>
-        <div class="card-body" id="r-risk"></div>
-      </div>
+      <div class="card"><div class="card-header"><h3>Lateness by Type</h3></div><div class="card-body" id="r-bytype"></div></div>
+      <div class="card"><div class="card-header"><h3>Risk Report</h3></div><div class="card-body" id="r-risk"></div></div>
     </div>
-    <div class="card" style="margin-top:1.5rem">
-      <div class="card-header"><h3>Bottleneck Analysis</h3></div>
-      <div class="card-body" id="r-bottleneck"></div>
-    </div>
+    <div class="card" style="margin-top:1.5rem"><div class="card-header"><h3>Bottleneck Analysis</h3></div><div class="card-body" id="r-bottleneck"></div></div>
   </div>
 </div>
 
 <!-- DEPLOY GUIDE -->
 <div class="page" id="page-deploy">
-  <div class="dash-header">
-    <h1>Free-Cloud Deployment Guide</h1>
-    <p>Deploy this exact platform on free cloud infrastructure — no credit card required for the always-free tiers.</p>
-  </div>
-
+  <div class="dash-header"><h1>Free-Cloud Deployment Guide</h1><p>Deploy this platform on free cloud infrastructure — no credit card required.</p></div>
   <div class="card" style="margin-bottom:1.5rem">
     <div class="card-header"><h3>Choose Your Platform</h3></div>
     <div class="card-body">
       <div class="platform-grid">
-        <div class="plat-card selected" onclick="selectPlatform(this,'github')">
-          <h4>GitHub Pages</h4>
-          <p>This platform as a static site — zero backend needed for the demo version. Deploy in 2 minutes.</p>
-          <span class="plat-tag free">100% Free</span><span class="plat-tag">Static</span><span class="plat-tag">Easiest</span>
-        </div>
-        <div class="plat-card" onclick="selectPlatform(this,'railway')">
-          <h4>Railway.app</h4>
-          <p>Full-stack with Python optimizer backend + PostgreSQL. $5/mo free credit. Deploy in 30 min.</p>
-          <span class="plat-tag free">Free Credit</span><span class="plat-tag">Full-stack</span><span class="plat-tag">Recommended</span>
-        </div>
-        <div class="plat-card" onclick="selectPlatform(this,'gcp')">
-          <h4>Google Cloud Platform</h4>
-          <p>Enterprise-grade. Cloud Run + Firestore + Cloud Scheduler. Always-free tier after $300 credit.</p>
-          <span class="plat-tag free">Always-free Tier</span><span class="plat-tag">Enterprise</span>
-        </div>
-        <div class="plat-card" onclick="selectPlatform(this,'render')">
-          <h4>Render.com</h4>
-          <p>Simple Git-based deploy. Free web service (spins down after inactivity) + free PostgreSQL 90 days.</p>
-          <span class="plat-tag free">Free Tier</span><span class="plat-tag">Beginner-friendly</span>
-        </div>
-        <div class="plat-card" onclick="selectPlatform(this,'aws')">
-          <h4>AWS Free Tier</h4>
-          <p>Lambda + DynamoDB + API Gateway. 12-month free, then pay-as-you-go. Most powerful option.</p>
-          <span class="plat-tag free">12-Month Free</span><span class="plat-tag">Scalable</span>
-        </div>
-        <div class="plat-card" onclick="selectPlatform(this,'netlify')">
-          <h4>Netlify</h4>
-          <p>Frontend + serverless functions. Free tier: 100GB bandwidth, 125k function calls/month.</p>
-          <span class="plat-tag free">Free Tier</span><span class="plat-tag">Serverless</span>
-        </div>
+        <div class="plat-card selected" onclick="selectPlatform(this,'github')"><h4>GitHub Pages</h4><p>Static site — zero backend. Deploy in 2 minutes.</p><span class="plat-tag free">100% Free</span><span class="plat-tag">Easiest</span></div>
+        <div class="plat-card" onclick="selectPlatform(this,'railway')"><h4>Railway.app</h4><p>Full-stack + PostgreSQL. $5/mo free credit.</p><span class="plat-tag free">Free Credit</span><span class="plat-tag">Recommended</span></div>
+        <div class="plat-card" onclick="selectPlatform(this,'gcp')"><h4>Google Cloud Platform</h4><p>Cloud Run + Firestore + Scheduler.</p><span class="plat-tag free">Always-free Tier</span><span class="plat-tag">Enterprise</span></div>
+        <div class="plat-card" onclick="selectPlatform(this,'render')"><h4>Render.com</h4><p>Git deploy + free PostgreSQL 90 days.</p><span class="plat-tag free">Free Tier</span><span class="plat-tag">Beginner-friendly</span></div>
+        <div class="plat-card" onclick="selectPlatform(this,'aws')"><h4>AWS Free Tier</h4><p>Lambda + DynamoDB. 12-month free.</p><span class="plat-tag free">12-Month Free</span><span class="plat-tag">Scalable</span></div>
+        <div class="plat-card" onclick="selectPlatform(this,'netlify')"><h4>Netlify</h4><p>Serverless functions. 125k calls/month free.</p><span class="plat-tag free">Free Tier</span><span class="plat-tag">Serverless</span></div>
       </div>
     </div>
   </div>
-
   <div id="deploy-steps"></div>
 </div>
 
@@ -554,19 +310,38 @@ pre .f{color:#d2a8ff}
   <div class="modal">
     <h3 id="modal-title">Request Details</h3>
     <div id="modal-body"></div>
-    <div class="modal-footer">
-      <button class="btn btn-outline" onclick="closeModal()">Close</button>
-    </div>
+    <div class="modal-footer"><button class="btn btn-outline" onclick="closeModal()">Close</button></div>
   </div>
 </div>
 
 <script>
 // ═══════════════════════════════════════════════════════════════
-// DATA STORE
+// ✅ PERSISTENT STORAGE — localStorage
 // ═══════════════════════════════════════════════════════════════
-let requests = [];
+const STORAGE_KEY = 'agri_requests_v2';
+
+function saveToStorage() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(requests)); }
+  catch(e) { console.warn('Save failed:', e); }
+}
+
+function loadFromStorage() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    parsed.forEach(r => { r.deadline = new Date(r.deadline); }); // restore Date objects
+    return parsed;
+  } catch(e) { return []; }
+}
+
+// ── Load saved data on startup ──────────────────────────────
+let requests = loadFromStorage();
 let schedule = [];
-let reqCounter = 1;
+let reqCounter = requests.length
+  ? Math.max(...requests.map(r => parseInt(r.id.split('-')[1]) || 0)) + 1
+  : 1;
+
 const TYPES = {design:'Experimental Design',analysis:'Data Analysis',reporting:'Statistical Reporting',collection:'Data Collection Review',modelling:'Modelling Consultation'};
 const PRIO_ORDER = {urgent:4,high:3,normal:2,routine:1};
 const DAYS = ['Monday','Tuesday','Wednesday','Thursday','Friday'];
@@ -579,7 +354,7 @@ function showPage(id) {
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('page-'+id).classList.add('active');
-  const tabs = [...document.querySelectorAll('.nav-tab')];
+  const tabs=[...document.querySelectorAll('.nav-tab')];
   tabs.find(t=>t.textContent.trim().startsWith(id.charAt(0).toUpperCase()+id.slice(1)))?.classList.add('active');
   if(id==='dashboard') updateDashboard();
   if(id==='schedule') renderCalendar();
@@ -591,35 +366,32 @@ function showPage(id) {
 // ═══════════════════════════════════════════════════════════════
 function submitRequest() {
   const name = document.getElementById('sci-name').value.trim();
-  const id   = document.getElementById('sci-id').value.trim();
-  if(!name||!id){alert('Please enter Scientist Name and ID.');return;}
+  const sid  = document.getElementById('sci-id').value.trim();
+  if(!name||!sid){alert('Please enter Scientist Name and ID.');return;}
   const deadline = document.getElementById('cons-deadline').value;
   if(!deadline){alert('Please set a deadline.');return;}
   const req = {
-    id: 'REQ-'+String(reqCounter++).padStart(3,'0'),
-    scientist: name, sciId: id,
-    type: document.getElementById('cons-type').value,
-    priority: document.getElementById('cons-priority').value,
-    deadline: new Date(deadline),
-    duration: parseFloat(document.getElementById('cons-duration').value),
-    prefStart: document.getElementById('pref-start').value,
-    prefEnd: document.getElementById('pref-end').value,
-    deps: document.getElementById('cons-deps').value.split(',').map(s=>s.trim()).filter(Boolean),
-    notes: document.getElementById('cons-notes').value,
-    status: 'pending',
-    lateness: 0,
-    scheduledSlot: null
+    id:'REQ-'+String(reqCounter++).padStart(3,'0'),
+    scientist:name, sciId:sid,
+    type:document.getElementById('cons-type').value,
+    priority:document.getElementById('cons-priority').value,
+    deadline:new Date(deadline),
+    duration:parseFloat(document.getElementById('cons-duration').value),
+    prefStart:document.getElementById('pref-start').value,
+    prefEnd:document.getElementById('pref-end').value,
+    deps:document.getElementById('cons-deps').value.split(',').map(s=>s.trim()).filter(Boolean),
+    notes:document.getElementById('cons-notes').value,
+    status:'pending', lateness:0, scheduledSlot:null
   };
   requests.push(req);
-  renderRequests();
-  updateBadge();
-  // reset
+  saveToStorage(); // ✅ persist immediately
+  renderRequests(); updateBadge();
   ['sci-name','sci-id','cons-deps','cons-notes'].forEach(id=>document.getElementById(id).value='');
-  showNotif('Request '+req.id+' submitted successfully.','ok');
+  showNotif('✅ '+req.id+' submitted and saved.','ok');
 }
 
 function loadSampleData() {
-  const samples = [
+  const samples=[
     {name:'Dr. Amara Osei',id:'SCI-001',type:'design',priority:'urgent',days:2,dur:2},
     {name:'Dr. Lin Wei',id:'SCI-002',type:'analysis',priority:'high',days:3,dur:3},
     {name:'Dr. Priya Nair',id:'SCI-003',type:'reporting',priority:'normal',days:7,dur:1.5},
@@ -632,27 +404,23 @@ function loadSampleData() {
     {name:'Dr. Ahmed Khalil',id:'SCI-010',type:'modelling',priority:'urgent',days:2,dur:3},
   ];
   samples.forEach(s=>{
-    const d = new Date(); d.setDate(d.getDate()+s.days);
-    requests.push({
-      id:'REQ-'+String(reqCounter++).padStart(3,'0'),
-      scientist:s.name, sciId:s.id, type:s.type, priority:s.priority,
-      deadline:d, duration:s.dur, prefStart:'09:00', prefEnd:'17:00',
-      deps:[], notes:'Sample consultation request.', status:'pending', lateness:0, scheduledSlot:null
-    });
+    const d=new Date(); d.setDate(d.getDate()+s.days);
+    requests.push({id:'REQ-'+String(reqCounter++).padStart(3,'0'),scientist:s.name,sciId:s.id,type:s.type,priority:s.priority,deadline:d,duration:s.dur,prefStart:'09:00',prefEnd:'17:00',deps:[],notes:'Sample consultation request.',status:'pending',lateness:0,scheduledSlot:null});
   });
+  saveToStorage(); // ✅ persist sample data
   renderRequests(); updateBadge();
-  showNotif('10 sample requests loaded.','ok');
+  showNotif('✅ 10 sample requests loaded and saved.','ok');
 }
 
 function renderRequests() {
-  const filter = document.getElementById('filter-status').value;
-  const tbody = document.getElementById('req-table');
-  const filtered = filter==='all'?requests:requests.filter(r=>r.status===filter);
+  const filter=document.getElementById('filter-status').value;
+  const tbody=document.getElementById('req-table');
+  const filtered=filter==='all'?requests:requests.filter(r=>r.status===filter);
   if(!filtered.length){tbody.innerHTML='<tr><td colspan="9" style="color:var(--earth);font-size:.85rem;padding:1rem">No requests.</td></tr>';return;}
-  tbody.innerHTML = filtered.map(r=>{
-    const daysLeft = Math.ceil((r.deadline-new Date())/(1000*60*60*24));
-    const badge = r.priority==='urgent'?'badge-danger':r.priority==='high'?'badge-warn':r.priority==='normal'?'badge-blue':'';
-    const statBadge = r.status==='scheduled'?'badge-ok':r.status==='late'?'badge-danger':'';
+  tbody.innerHTML=filtered.map(r=>{
+    const daysLeft=Math.ceil((r.deadline-new Date())/(1000*60*60*24));
+    const badge=r.priority==='urgent'?'badge-danger':r.priority==='high'?'badge-warn':r.priority==='normal'?'badge-blue':'';
+    const statBadge=r.status==='scheduled'?'badge-ok':r.status==='late'?'badge-danger':'';
     return `<tr>
       <td><code>${r.id}</code></td>
       <td>${r.scientist}<br><small style="color:var(--earth)">${r.sciId}</small></td>
@@ -667,11 +435,18 @@ function renderRequests() {
   }).join('');
 }
 
-function clearRequests(){if(confirm('Clear all requests?')){requests=[];schedule=[];reqCounter=1;renderRequests();updateBadge();updateDashboard();renderCalendar();}}
+function clearRequests(){
+  if(confirm('Clear all requests? This will permanently delete all saved data.')){
+    requests=[]; schedule=[]; reqCounter=1;
+    localStorage.removeItem(STORAGE_KEY); // ✅ clear storage
+    renderRequests(); updateBadge(); updateDashboard(); renderCalendar();
+    showNotif('All requests cleared.','ok');
+  }
+}
 
 function viewRequest(id){
-  const r = requests.find(x=>x.id===id); if(!r)return;
-  document.getElementById('modal-title').textContent = r.id+' — '+r.scientist;
+  const r=requests.find(x=>x.id===id); if(!r)return;
+  document.getElementById('modal-title').textContent=r.id+' — '+r.scientist;
   document.getElementById('modal-body').innerHTML=`
     <table style="width:100%;font-size:.87rem"><tbody>
     <tr><td style="padding:.4rem;color:var(--earth);font-weight:600">Type</td><td>${TYPES[r.type]}</td></tr>
@@ -686,139 +461,99 @@ function viewRequest(id){
   document.getElementById('modal-overlay').classList.add('open');
 }
 function closeModal(e){if(!e||e.target.id==='modal-overlay')document.getElementById('modal-overlay').classList.remove('open');}
-
 function updateBadge(){document.getElementById('req-badge').textContent=requests.filter(r=>r.status==='pending').length;}
 
 // ═══════════════════════════════════════════════════════════════
-// OPTIMIZER — EDF Heuristic + ILP simulation
+// OPTIMIZER
 // ═══════════════════════════════════════════════════════════════
 function runOptimizer() {
   if(!requests.length){alert('No requests to optimize. Add requests first.');return;}
-  const btn = document.getElementById('run-btn');
+  const btn=document.getElementById('run-btn');
   btn.disabled=true; btn.textContent='⏳ Running...';
-  const logBox = document.getElementById('opt-log');
+  const logBox=document.getElementById('opt-log');
   logBox.style.display='block'; logBox.innerHTML='';
-  const log = (msg,cls='')=>{
-    logBox.innerHTML+=`<div class="${cls?'log-'+cls:''}">[${new Date().toLocaleTimeString()}] ${msg}</div>`;
-    logBox.scrollTop=logBox.scrollHeight;
-  };
-
-  const maxMeet = parseInt(document.getElementById('p-maxmeet').value);
-  const buffer  = parseInt(document.getElementById('p-buffer').value)/60;
-  const alpha   = parseFloat(document.getElementById('p-alpha').value);
-  const algo    = document.getElementById('p-algo').value;
-  const w1      = parseFloat(document.getElementById('p-w1').value);
-  const w2      = 1-w1;
-
-  // Simulate async optimization steps
+  const log=(msg,cls='')=>{logBox.innerHTML+=`<div class="${cls?'log-'+cls:''}">[${new Date().toLocaleTimeString()}] ${msg}</div>`;logBox.scrollTop=logBox.scrollHeight;};
+  const maxMeet=parseInt(document.getElementById('p-maxmeet').value);
+  const buffer=parseInt(document.getElementById('p-buffer').value)/60;
+  const alpha=parseFloat(document.getElementById('p-alpha').value);
+  const algo=document.getElementById('p-algo').value;
+  const w1=parseFloat(document.getElementById('p-w1').value);
+  const w2=1-w1;
   let step=0;
   const steps=[
-    ()=>{log('Initializing optimization engine...','info'); log(`Algorithm: ${algo.toUpperCase()}, α=${alpha}, buffer=${Math.round(buffer*60)}min, maxMeet/day=${maxMeet}`)},
+    ()=>{log('Initializing optimization engine...','info');log(`Algorithm: ${algo.toUpperCase()}, α=${alpha}, buffer=${Math.round(buffer*60)}min, maxMeet/day=${maxMeet}`);},
     ()=>{log('Loading '+requests.length+' consultation requests...','info');
-         log('Checking dependency chains...');
-         const depIssues = requests.filter(r=>r.deps.some(d=>!requests.find(x=>x.id===d)));
-         if(depIssues.length) log(depIssues.length+' requests have unresolved dependencies — scheduling without them','warn');},
-    ()=>{log('Applying stochastic buffer inflation (p\'ᵢ = E[pᵢ] + α·σ(pᵢ))...');
-         const avgSd = 0.3;
-         requests.forEach(r=>{ r._inflated = r.duration*(1+alpha*avgSd*0.5); });
-         log(`Average inflated duration: ${(requests.reduce((s,r)=>s+r._inflated,0)/requests.length).toFixed(2)}h per task`,'ok');},
+         const depIssues=requests.filter(r=>r.deps.some(d=>!requests.find(x=>x.id===d)));
+         if(depIssues.length)log(depIssues.length+' requests have unresolved dependencies','warn');},
+    ()=>{log("Applying stochastic buffer inflation (p'ᵢ = E[pᵢ] + α·σ(pᵢ))...");
+         requests.forEach(r=>{r._inflated=r.duration*(1+alpha*0.3*0.5);});
+         log(`Average inflated duration: ${(requests.reduce((s,r)=>s+r._inflated,0)/requests.length).toFixed(2)}h`,'ok');},
     ()=>{
-         // ── CORE EDF HEURISTIC ──
-         log('Running Modified EDF Heuristic — sorting by composite score...','info');
-         const now = new Date();
-         const sorted = [...requests].sort((a,b)=>{
-           const daysA = (a.deadline-now)/(1000*60*60*24);
-           const daysB = (b.deadline-now)/(1000*60*60*24);
-           const scoreA = w1*(1/Math.max(daysA,0.1)) + w2*PRIO_ORDER[a.priority]/4;
-           const scoreB = w1*(1/Math.max(daysB,0.1)) + w2*PRIO_ORDER[b.priority]/4;
-           return scoreB-scoreA;
+         log('Running Modified EDF Heuristic...','info');
+         const now=new Date();
+         const sorted=[...requests].sort((a,b)=>{
+           const dA=(a.deadline-now)/(1000*60*60*24), dB=(b.deadline-now)/(1000*60*60*24);
+           return (w1*(1/Math.max(dB,0.1))+w2*PRIO_ORDER[b.priority]/4)-(w1*(1/Math.max(dA,0.1))+w2*PRIO_ORDER[a.priority]/4);
          });
          log(`Top priority: ${sorted[0].id} (${sorted[0].scientist}, ${sorted[0].priority})`,'ok');
-
-         // ── SLOT ASSIGNMENT ──
          schedule=[];
-         const slotMap={}; // day -> hour -> busy
-         DAYS.forEach((d,di)=>{ slotMap[di]={}; HOURS.forEach(h=>{slotMap[di][h]=null;}); });
-         const meetCount={}; // day -> count
-
+         const slotMap={};
+         DAYS.forEach((_,di)=>{slotMap[di]={};HOURS.forEach(h=>{slotMap[di][h]=null;});});
+         const meetCount={};
          sorted.forEach(r=>{
-           const depsMet = r.deps.every(d=>{
-             const dep = requests.find(x=>x.id===d);
-             return dep && dep.status==='scheduled';
-           });
-           if(!depsMet && r.deps.length){ r.status='pending'; return; }
-
-           const needed = Math.ceil(r._inflated)+1;
+           if(r.deps.length&&!r.deps.every(d=>{const dep=requests.find(x=>x.id===d);return dep&&dep.status==='scheduled';})){r.status='pending';return;}
            let placed=false;
            for(let di=0;di<5&&!placed;di++){
-             if((meetCount[di]||0)>=maxMeet) continue;
+             if((meetCount[di]||0)>=maxMeet)continue;
              for(let hi=0;hi<HOURS.length&&!placed;hi++){
-               const h=HOURS[hi];
-               // check slots available
-               const slotsNeeded=Math.ceil(r._inflated);
+               const sn=Math.ceil(r._inflated);
                let ok=true;
-               for(let s=0;s<slotsNeeded;s++){
-                 if(slotMap[di][HOURS[hi+s]]!==undefined && slotMap[di][HOURS[hi+s]]!==null){ok=false;break;}
-               }
-               if(!ok) continue;
-               // assign
-               for(let s=0;s<slotsNeeded&&hi+s<HOURS.length;s++) slotMap[di][HOURS[hi+s]]=r.id;
+               for(let s=0;s<sn;s++){if(slotMap[di][HOURS[hi+s]]!==undefined&&slotMap[di][HOURS[hi+s]]!==null){ok=false;break;}}
+               if(!ok)continue;
+               for(let s=0;s<sn&&hi+s<HOURS.length;s++)slotMap[di][HOURS[hi+s]]=r.id;
                meetCount[di]=(meetCount[di]||0)+1;
-               const completionDay = di;
-               const completionHour = HOURS[Math.min(hi+slotsNeeded-1,HOURS.length-1)];
-               // compute lateness
-               const schedDate = new Date(); schedDate.setDate(schedDate.getDate()+(di-schedDate.getDay()+1));
-               const lateDays = (schedDate-r.deadline)/(1000*60*60*24);
-               r.lateness = Math.max(0, lateDays*8); // convert to hours
-               r.status = r.lateness>0?'late':'scheduled';
-               r.scheduledSlot = `${DAYS[di]} ${h}:00 — ${h+slotsNeeded}:00`;
-               schedule.push({reqId:r.id,day:di,startHour:h,endHour:h+Math.ceil(r._inflated),priority:r.priority,scientist:r.scientist,type:r.type});
+               const sd=new Date();sd.setDate(sd.getDate()+(di-sd.getDay()+1));
+               r.lateness=Math.max(0,(sd-r.deadline)/(1000*60*60*24)*8);
+               r.status=r.lateness>0?'late':'scheduled';
+               r.scheduledSlot=`${DAYS[di]} ${HOURS[hi]}:00 — ${HOURS[hi]+sn}:00`;
+               schedule.push({reqId:r.id,day:di,startHour:HOURS[hi],endHour:HOURS[hi]+sn,priority:r.priority,scientist:r.scientist,type:r.type});
                placed=true;
              }
            }
-           if(!placed){ r.status='pending'; log(`Could not place ${r.id} — ${r.scientist} (overloaded schedule)`, 'warn'); }
+           if(!placed){r.status='pending';log(`Could not place ${r.id} — ${r.scientist}`,'warn');}
          });
-         log(`Scheduled ${schedule.length}/${requests.length} consultations`,'ok');
-    },
+         log(`Scheduled ${schedule.length}/${requests.length} consultations`,'ok');},
     ()=>{
          if(algo!=='edf'){
-           log(`Running ${algo==='ilp'?'ILP re-optimization':'Genetic Algorithm'} on window of disruption...`,'info');
-           // Simulate improvement
-           const lateOnes = requests.filter(r=>r.lateness>0);
-           lateOnes.slice(0,Math.ceil(lateOnes.length*0.4)).forEach(r=>{r.lateness=Math.max(0,r.lateness*0.5);});
-           log(`Re-optimization improved ${Math.ceil(lateOnes.length*0.4)} late tasks`,'ok');
+           log(`Running ${algo==='ilp'?'ILP re-optimization':'Genetic Algorithm'}...`,'info');
+           requests.filter(r=>r.lateness>0).slice(0,Math.ceil(requests.filter(r=>r.lateness>0).length*0.4)).forEach(r=>{r.lateness=Math.max(0,r.lateness*0.5);});
+           log('Re-optimization complete.','ok');
          }
-         log('Inserting buffer slots between consecutive meetings...','info');
-         log('Buffer insertion complete.','ok');
-    },
+         log('Buffer insertion complete.','ok');},
     ()=>{
-         const totalLateness = requests.reduce((s,r)=>s+r.lateness,0);
-         const atRisk = requests.filter(r=>r.lateness>0).length;
-         const scheduled = requests.filter(r=>r.status==='scheduled').length;
-         const util = Math.round((schedule.length/(5*HOURS.length))*100);
-         log(`✓ Optimization complete!`,'ok');
-         log(`Total Lateness: ${totalLateness.toFixed(1)}h | At Risk: ${atRisk} | Utilization: ${util}%`,'ok');
-         renderOptResults(totalLateness,atRisk,scheduled,util);
-         updateDashboard(); renderCalendar(); renderRequests(); updateBadge();
+         const totalLate=requests.reduce((s,r)=>s+r.lateness,0);
+         const atRisk=requests.filter(r=>r.lateness>0).length;
+         const sched=requests.filter(r=>r.status==='scheduled').length;
+         const util=Math.round((schedule.length/(5*HOURS.length))*100);
+         log('✓ Optimization complete!','ok');
+         log(`Total Lateness: ${totalLate.toFixed(1)}h | At Risk: ${atRisk} | Utilization: ${util}%`,'ok');
+         saveToStorage(); // ✅ save updated statuses after optimization
+         renderOptResults(totalLate,atRisk,sched,util);
+         updateDashboard();renderCalendar();renderRequests();updateBadge();
          document.getElementById('opt-results').style.display='block';
-         btn.disabled=false; btn.textContent='▶ Run Optimizer';
-    }
+         btn.disabled=false;btn.textContent='▶ Run Optimizer';}
   ];
-
-  const run = ()=>{ if(step<steps.length){steps[step]();step++;setTimeout(run,600);} };
+  const run=()=>{if(step<steps.length){steps[step]();step++;setTimeout(run,600);}};
   run();
 }
 
 function renderOptResults(lat,risk,sched,util){
   const byPrio={urgent:0,high:0,normal:0,routine:0};
   requests.forEach(r=>byPrio[r.priority]=(byPrio[r.priority]||0)+r.lateness);
-  document.getElementById('opt-metrics').innerHTML=`
-    <div style="display:flex;flex-direction:column;gap:.85rem">
-      ${[['Total Lateness (∑Lᵢ)',lat.toFixed(1)+'h','pf-amber'],['Tasks Scheduled',sched+'/'+requests.length,'pf-green'],['At Risk',risk,'pf-red'],['Utilization',util+'%','pf-blue']]
-        .map(([l,v,c])=>`<div><div style="display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.2rem"><span style="color:var(--earth)">${l}</span><strong>${v}</strong></div><div class="progress-bar"><div class="progress-fill ${c}" style="width:${typeof v==='string'&&v.includes('%')?v:Math.min(100,(parseFloat(v)/requests.length)*100)+'%'}"></div></div></div>`).join('')}
-    </div>`;
-  document.getElementById('opt-schedule-summary').innerHTML=
-    Object.entries(byPrio).map(([p,l])=>`
+  document.getElementById('opt-metrics').innerHTML=`<div style="display:flex;flex-direction:column;gap:.85rem">
+    ${[['Total Lateness (∑Lᵢ)',lat.toFixed(1)+'h','pf-amber'],['Tasks Scheduled',sched+'/'+requests.length,'pf-green'],['At Risk',risk,'pf-red'],['Utilization',util+'%','pf-blue']]
+    .map(([l,v,c])=>`<div><div style="display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.2rem"><span style="color:var(--earth)">${l}</span><strong>${v}</strong></div><div class="progress-bar"><div class="progress-fill ${c}" style="width:${typeof v==='string'&&v.includes('%')?v:Math.min(100,(parseFloat(v)/requests.length)*100)+'%'}"></div></div></div>`).join('')}</div>`;
+  document.getElementById('opt-schedule-summary').innerHTML=Object.entries(byPrio).map(([p,l])=>`
     <div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border);font-size:.87rem">
       <span style="text-transform:capitalize;color:var(--earth)">${p}</span>
       <span style="font-family:'DM Mono',monospace;color:${l>0?'var(--danger)':'var(--ok)'}">${l>0?l.toFixed(1)+'h late':'✓ on time'}</span>
@@ -829,87 +564,48 @@ function renderOptResults(lat,risk,sched,util){
 // CALENDAR
 // ═══════════════════════════════════════════════════════════════
 function renderCalendar(){
-  const body = document.getElementById('cal-body');
-  const empty = document.getElementById('cal-empty');
+  const body=document.getElementById('cal-body'),empty=document.getElementById('cal-empty');
   if(!schedule.length){body.innerHTML='';empty.style.display='block';return;}
   empty.style.display='none';
-
-  // Build slot map
   const slotMap={};
-  schedule.forEach(s=>{
-    const key=s.day+'-'+s.startHour;
-    slotMap[key]=s;
-  });
-
+  schedule.forEach(s=>{slotMap[s.day+'-'+s.startHour]=s;});
   let html='<div class="cal-grid">';
   HOURS.forEach(h=>{
     html+=`<div class="cal-time">${h}:00</div>`;
     DAYS.forEach((_,di)=>{
-      const key=di+'-'+h;
-      const ev=slotMap[key];
-      if(ev){
-        const cls=ev.priority==='urgent'?'urgent':ev.priority==='high'?'high':'';
-        html+=`<div class="cal-slot"><div class="cal-event ${cls}" title="${ev.scientist}">${ev.scientist.split(' ').pop()}<br><small>${TYPES[ev.type]?.split(' ')[0]}</small></div></div>`;
-      } else {
-        html+=`<div class="cal-slot empty"></div>`;
-      }
+      const ev=slotMap[di+'-'+h];
+      if(ev){const cls=ev.priority==='urgent'?'urgent':ev.priority==='high'?'high':'';html+=`<div class="cal-slot"><div class="cal-event ${cls}" title="${ev.scientist}">${ev.scientist.split(' ').pop()}<br><small>${TYPES[ev.type]?.split(' ')[0]}</small></div></div>`;}
+      else html+=`<div class="cal-slot empty"></div>`;
     });
   });
   html+='</div>';
   body.innerHTML=html;
-  const sched2 = requests.filter(r=>r.status==='scheduled').length;
-  document.getElementById('sched-summary').textContent=`${sched2} consultations scheduled`;
+  document.getElementById('sched-summary').textContent=`${requests.filter(r=>r.status==='scheduled').length} consultations scheduled`;
 }
 
 // ═══════════════════════════════════════════════════════════════
 // DASHBOARD
 // ═══════════════════════════════════════════════════════════════
 function updateDashboard(){
-  const total = requests.length;
-  const totalLate = requests.reduce((s,r)=>s+r.lateness,0);
-  const atRisk = requests.filter(r=>r.lateness>0).length;
-  const scheduled = requests.filter(r=>r.status==='scheduled').length;
-  const util = total?Math.round((scheduled/(5*HOURS.length))*100):0;
-
+  const total=requests.length,totalLate=requests.reduce((s,r)=>s+r.lateness,0),atRisk=requests.filter(r=>r.lateness>0).length;
+  const sched=requests.filter(r=>r.status==='scheduled').length,util=total?Math.round((sched/(5*HOURS.length))*100):0;
   document.getElementById('stat-total').textContent=total;
   document.getElementById('stat-lateness').textContent=totalLate.toFixed(1)+'h';
   document.getElementById('stat-risk').textContent=atRisk;
   document.getElementById('stat-util').textContent=util+'%';
-
-  // Alerts
-  const panel = document.getElementById('alert-panel');
-  const alerts = requests.filter(r=>r.lateness>0||((r.deadline-new Date())/(1000*60*60*24))<2);
-  if(!alerts.length){panel.innerHTML='<p style="color:var(--earth);font-size:.87rem">No active alerts.</p>';return;}
-  panel.innerHTML=alerts.slice(0,5).map(r=>{
+  const panel=document.getElementById('alert-panel');
+  const alerts=requests.filter(r=>r.lateness>0||((r.deadline-new Date())/(1000*60*60*24))<2);
+  panel.innerHTML=alerts.length?alerts.slice(0,5).map(r=>{
     const days=(r.deadline-new Date())/(1000*60*60*24);
-    const cls=r.lateness>0?'alert-danger':days<1?'alert-danger':'alert-warn';
-    const msg=r.lateness>0?`${r.id} — ${r.scientist} is ${r.lateness.toFixed(1)}h late`:
-                           `${r.id} — ${r.scientist} deadline in ${days.toFixed(1)} days`;
-    return `<div class="alert ${cls}"><span class="alert-icon">${r.lateness>0?'🔴':'⚠️'}</span>${msg}</div>`;
+    return `<div class="alert ${r.lateness>0?'alert-danger':days<1?'alert-danger':'alert-warn'}"><span class="alert-icon">${r.lateness>0?'🔴':'⚠️'}</span>${r.lateness>0?`${r.id} — ${r.scientist} is ${r.lateness.toFixed(1)}h late`:`${r.id} — ${r.scientist} deadline in ${days.toFixed(1)} days`}</div>`;
+  }).join(''):'<p style="color:var(--earth);font-size:.87rem">No active alerts.</p>';
+  const upcoming=[...requests].filter(r=>r.status==='scheduled').sort((a,b)=>a.deadline-b.deadline).slice(0,6);
+  const tbody=document.getElementById('upcoming-table');
+  tbody.innerHTML=upcoming.length?upcoming.map(r=>`<tr><td>${r.scientist}</td><td>${TYPES[r.type]}</td><td>${r.deadline.toLocaleDateString()}</td><td><span class="badge ${r.priority==='urgent'?'badge-danger':r.priority==='high'?'badge-warn':'badge-blue'}">${r.priority}</span></td></tr>`).join(''):'<tr><td colspan="4" style="color:var(--earth);font-size:.85rem;padding:1rem">Run optimizer to schedule consultations.</td></tr>';
+  document.getElementById('util-chart').innerHTML=DAYS.map((d,di)=>{
+    const count=schedule.filter(s=>s.day===di).length,pct=Math.round((count/HOURS.length)*100);
+    return `<div style="margin-bottom:.6rem"><div style="display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:.2rem"><span style="color:var(--earth)">${d}</span><span style="font-family:'DM Mono',monospace">${count} consultations (${pct}%)</span></div><div class="progress-bar"><div class="progress-fill ${pct>80?'pf-red':pct>50?'pf-amber':'pf-green'}" style="width:${pct}%"></div></div></div>`;
   }).join('');
-
-  // Upcoming table
-  const upcoming = [...requests].filter(r=>r.status==='scheduled').sort((a,b)=>a.deadline-b.deadline).slice(0,6);
-  const tbody = document.getElementById('upcoming-table');
-  if(!upcoming.length){tbody.innerHTML='<tr><td colspan="4" style="color:var(--earth);font-size:.85rem;padding:1rem">Run optimizer to schedule consultations.</td></tr>';return;}
-  tbody.innerHTML=upcoming.map(r=>{
-    const badge=r.priority==='urgent'?'badge-danger':r.priority==='high'?'badge-warn':'badge-blue';
-    return `<tr><td>${r.scientist}</td><td>${TYPES[r.type]}</td><td>${r.deadline.toLocaleDateString()}</td><td><span class="badge ${badge}">${r.priority}</span></td></tr>`;
-  }).join('');
-
-  // Utilization chart
-  const dayUtil = DAYS.map((d,di)=>{
-    const count=schedule.filter(s=>s.day===di).length;
-    const pct=Math.round((count/HOURS.length)*100);
-    return {d,count,pct};
-  });
-  document.getElementById('util-chart').innerHTML=dayUtil.map(({d,count,pct})=>`
-    <div style="margin-bottom:.6rem">
-      <div style="display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:.2rem"><span style="color:var(--earth)">${d}</span><span style="font-family:'DM Mono',monospace">${count} consultations (${pct}%)</span></div>
-      <div class="progress-bar"><div class="progress-fill ${pct>80?'pf-red':pct>50?'pf-amber':'pf-green'}" style="width:${pct}%"></div></div>
-    </div>`).join('');
-
-  // Reports
   renderReports();
 }
 
@@ -917,49 +613,24 @@ function updateDashboard(){
 // REPORTS
 // ═══════════════════════════════════════════════════════════════
 function renderReports(){
-  const hasScheduled = requests.some(r=>r.status==='scheduled');
-  document.getElementById('reports-empty').style.display=hasScheduled?'none':'block';
-  document.getElementById('reports-content').style.display=hasScheduled?'block':'none';
-  if(!hasScheduled) return;
-
-  const ontime = requests.filter(r=>r.lateness===0&&r.status==='scheduled').length;
-  const late = requests.filter(r=>r.lateness>0);
-  const avgDelay = late.length ? (late.reduce((s,r)=>s+r.lateness,0)/late.length).toFixed(1) : 0;
-  const maxLate = late.length ? Math.max(...late.map(r=>r.lateness)).toFixed(1) : 0;
+  const has=requests.some(r=>r.status==='scheduled');
+  document.getElementById('reports-empty').style.display=has?'none':'block';
+  document.getElementById('reports-content').style.display=has?'block':'none';
+  if(!has)return;
+  const ontime=requests.filter(r=>r.lateness===0&&r.status==='scheduled').length;
+  const late=requests.filter(r=>r.lateness>0);
   document.getElementById('r-ontime').textContent=ontime;
-  document.getElementById('r-avgdelay').textContent=avgDelay+'h';
-  document.getElementById('r-maxlate').textContent=maxLate+'h';
+  document.getElementById('r-avgdelay').textContent=(late.length?(late.reduce((s,r)=>s+r.lateness,0)/late.length).toFixed(1):0)+'h';
+  document.getElementById('r-maxlate').textContent=(late.length?Math.max(...late.map(r=>r.lateness)).toFixed(1):0)+'h';
   document.getElementById('r-through').textContent=requests.filter(r=>r.status==='scheduled').length;
-
-  // By type
   const byType={};
-  requests.forEach(r=>{
-    if(!byType[r.type]) byType[r.type]={count:0,late:0,totalLate:0};
-    byType[r.type].count++;
-    if(r.lateness>0){byType[r.type].late++;byType[r.type].totalLate+=r.lateness;}
-  });
-  document.getElementById('r-bytype').innerHTML=Object.entries(byType).map(([t,v])=>`
-    <div style="margin-bottom:.75rem">
-      <div style="display:flex;justify-content:space-between;font-size:.84rem;margin-bottom:.2rem">
-        <span>${TYPES[t]}</span>
-        <span style="font-family:'DM Mono',monospace;color:${v.late>0?'var(--danger)':'var(--ok)'}">${v.late>0?v.totalLate.toFixed(1)+'h late':'✓ on time'}</span>
-      </div>
-      <div class="progress-bar"><div class="progress-fill ${v.late>0?'pf-red':'pf-green'}" style="width:${Math.round((v.late/v.count)*100)}%"></div></div>
-    </div>`).join('');
-
-  // Risk
-  const risky = requests.filter(r=>r.lateness>0||((r.deadline-new Date())/(1000*60*60*24))<3);
-  document.getElementById('r-risk').innerHTML=risky.length?risky.map(r=>{
-    const days=((r.deadline-new Date())/(1000*60*60*24)).toFixed(1);
-    return `<div class="alert ${r.lateness>0?'alert-danger':'alert-warn'}" style="margin-bottom:.5rem"><span>${r.id} — ${r.scientist}<br><small>${r.lateness>0?r.lateness.toFixed(1)+'h late':'Deadline in '+days+' days'}</small></span></div>`;
-  }).join(''):'<p style="color:var(--ok);font-size:.87rem">✓ No projects currently at risk.</p>';
-
-  // Bottleneck
-  const dayCounts=DAYS.map((d,i)=>({d,n:schedule.filter(s=>s.day===i).length}));
-  const peak=dayCounts.reduce((m,x)=>x.n>m.n?x:m,{n:0});
-  document.getElementById('r-bottleneck').innerHTML=`
-    <p style="font-size:.87rem;color:var(--earth);margin-bottom:1rem">Peak scheduling day: <strong style="color:var(--soil)">${peak.d||'—'}</strong> with ${peak.n} consultations. ${peak.n>6?'⚠️ Consider redistributing or adding a second statistician.':'✓ Load is well-distributed.'}</p>
-    ${dayCounts.map(({d,n})=>`<div style="margin-bottom:.5rem"><div style="display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:.2rem"><span style="color:var(--earth)">${d}</span><span>${n} consult${n!==1?'s':''}</span></div><div class="progress-bar"><div class="progress-fill ${n>6?'pf-red':n>4?'pf-amber':'pf-green'}" style="width:${Math.round((n/8)*100)}%"></div></div></div>`).join('')}`;
+  requests.forEach(r=>{if(!byType[r.type])byType[r.type]={count:0,late:0,totalLate:0};byType[r.type].count++;if(r.lateness>0){byType[r.type].late++;byType[r.type].totalLate+=r.lateness;}});
+  document.getElementById('r-bytype').innerHTML=Object.entries(byType).map(([t,v])=>`<div style="margin-bottom:.75rem"><div style="display:flex;justify-content:space-between;font-size:.84rem;margin-bottom:.2rem"><span>${TYPES[t]}</span><span style="font-family:'DM Mono',monospace;color:${v.late>0?'var(--danger)':'var(--ok)'}">${v.late>0?v.totalLate.toFixed(1)+'h late':'✓ on time'}</span></div><div class="progress-bar"><div class="progress-fill ${v.late>0?'pf-red':'pf-green'}" style="width:${Math.round((v.late/v.count)*100)}%"></div></div></div>`).join('');
+  const risky=requests.filter(r=>r.lateness>0||((r.deadline-new Date())/(1000*60*60*24))<3);
+  document.getElementById('r-risk').innerHTML=risky.length?risky.map(r=>{const d=((r.deadline-new Date())/(1000*60*60*24)).toFixed(1);return `<div class="alert ${r.lateness>0?'alert-danger':'alert-warn'}" style="margin-bottom:.5rem"><span>${r.id} — ${r.scientist}<br><small>${r.lateness>0?r.lateness.toFixed(1)+'h late':'Deadline in '+d+' days'}</small></span></div>`;}).join(''):'<p style="color:var(--ok);font-size:.87rem">✓ No projects currently at risk.</p>';
+  const dc=DAYS.map((d,i)=>({d,n:schedule.filter(s=>s.day===i).length}));
+  const peak=dc.reduce((m,x)=>x.n>m.n?x:m,{n:0});
+  document.getElementById('r-bottleneck').innerHTML=`<p style="font-size:.87rem;color:var(--earth);margin-bottom:1rem">Peak day: <strong style="color:var(--soil)">${peak.d||'—'}</strong> with ${peak.n} consultations. ${peak.n>6?'⚠️ Consider adding a second statistician.':'✓ Load is well-distributed.'}</p>${dc.map(({d,n})=>`<div style="margin-bottom:.5rem"><div style="display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:.2rem"><span style="color:var(--earth)">${d}</span><span>${n} consult${n!==1?'s':''}</span></div><div class="progress-bar"><div class="progress-fill ${n>6?'pf-red':n>4?'pf-amber':'pf-green'}" style="width:${Math.round((n/8)*100)}%"></div></div></div>`).join('')}`;
 }
 
 // ═══════════════════════════════════════════════════════════════
@@ -977,103 +648,33 @@ function showNotif(msg,type='info'){
 // ═══════════════════════════════════════════════════════════════
 // DEPLOY GUIDE
 // ═══════════════════════════════════════════════════════════════
-function selectPlatform(el, key){
-  document.querySelectorAll('.plat-card').forEach(c=>c.classList.remove('selected'));
-  el.classList.add('selected');
-  renderDeploy(key);
-}
+function selectPlatform(el,key){document.querySelectorAll('.plat-card').forEach(c=>c.classList.remove('selected'));el.classList.add('selected');renderDeploy(key);}
 
-const deployGuides = {
-  github:{
-    title:'GitHub Pages (Static Deployment — Easiest)',
-    steps:[
-      {n:1,title:'Save this file',body:'Save this entire HTML file as <code>index.html</code> on your computer.'},
-      {n:2,title:'Create a GitHub repository',body:'Go to <a href="https://github.com/new" target="_blank" style="color:var(--sage)">github.com/new</a>, create a public repo named <code>agri-scheduler</code>.'},
-      {n:3,title:'Upload your file',body:'Click "Add file" → "Upload files" → drag and drop your <code>index.html</code> → click "Commit changes".'},
-      {n:4,title:'Enable GitHub Pages',body:'Go to Settings → Pages → Source: Deploy from branch → Branch: <code>main</code> → folder: <code>/ (root)</code> → Save.'},
-      {n:5,title:'Your site is live!',body:'In ~2 minutes your platform is live at <code>https://YOUR-USERNAME.github.io/agri-scheduler</code>. Share this URL with your research team. Zero cost, forever free.'},
-    ],
-    note:'✅ This works perfectly for single-statistician or small team use. All data is stored in the browser (localStorage) — no backend needed for the demo version.'
-  },
-  railway:{
-    title:'Railway.app (Full-Stack with Python Backend)',
-    steps:[
-      {n:1,title:'Create your project files',body:'Create a folder with: <code>index.html</code> (this file), <code>app.py</code> (Flask API), <code>requirements.txt</code>, <code>Procfile</code>.'},
-      {n:2,title:'app.py — Flask + PuLP optimizer',body:`<pre><span class="k">from</span> flask <span class="k">import</span> Flask, request, jsonify\n<span class="k">from</span> flask_cors <span class="k">import</span> CORS\n<span class="k">import</span> pulp, json\n\napp = Flask(__name__)\nCORS(app)\n\n@app.<span class="f">route</span>(<span class="s">'/schedule'</span>, methods=[<span class="s">'POST'</span>])\n<span class="k">def</span> <span class="f">optimize</span>():\n    data = request.json[<span class="s">'requests'</span>]\n    <span class="c"># Run EDF heuristic + ILP (see paper Section 3-4)</span>\n    result = run_edf_heuristic(data)\n    <span class="k">return</span> jsonify(result)\n\n<span class="k">if</span> __name__ == <span class="s">'__main__'</span>:\n    app.<span class="f">run</span>(port=5000)</pre>`},
-      {n:3,title:'requirements.txt',body:`<pre>flask\nflask-cors\npulp\ngunicorn\npsycopg2-binary</pre>`},
-      {n:4,title:'Deploy to Railway',body:'Go to <a href="https://railway.app" target="_blank" style="color:var(--sage)">railway.app</a> → New Project → Deploy from GitHub → select your repo → Railway auto-deploys in ~3 minutes.'},
-      {n:5,title:'Add PostgreSQL',body:'In Railway dashboard → New Plugin → PostgreSQL. Copy the DATABASE_URL environment variable into your app.'},
-      {n:6,title:'Set environment variables',body:'Railway Variables tab → add: <code>SENDGRID_API_KEY</code>, <code>DATABASE_URL</code> (auto-set), <code>FLASK_ENV=production</code>.'},
-    ],
-    note:'✅ Free $5/month compute credit. Sufficient for ~100 scientists. PostgreSQL stores all requests and schedules persistently.'
-  },
-  gcp:{
-    title:'Google Cloud Platform (Enterprise — Always-Free Tier)',
-    steps:[
-      {n:1,title:'Create GCP project',body:'Go to <a href="https://console.cloud.google.com" target="_blank" style="color:var(--sage)">console.cloud.google.com</a> → New Project → name it <code>agri-scheduler</code>. Enable APIs: Cloud Run, Firestore, Cloud Scheduler, Cloud Build.'},
-      {n:2,title:'Containerize the optimizer',body:`<pre><span class="c"># Dockerfile</span>\n<span class="k">FROM</span> python:3.11-slim\n<span class="k">WORKDIR</span> /app\n<span class="k">COPY</span> requirements.txt .\n<span class="k">RUN</span> pip install -r requirements.txt\n<span class="k">COPY</span> . .\n<span class="k">CMD</span> [<span class="s">"uvicorn"</span>, <span class="s">"main:app"</span>, <span class="s">"--host"</span>, <span class="s">"0.0.0.0"</span>, <span class="s">"--port"</span>, <span class="s">"8080"</span>]</pre>`},
-      {n:3,title:'Deploy to Cloud Run',body:`<pre>gcloud auth login\ngcloud config set project YOUR_PROJECT_ID\ngcloud builds submit --tag gcr.io/YOUR_PROJECT_ID/agri-scheduler\ngcloud run deploy agri-scheduler \\\n  --image gcr.io/YOUR_PROJECT_ID/agri-scheduler \\\n  --platform managed --region us-central1 \\\n  --allow-unauthenticated</pre>`},
-      {n:4,title:'Configure Firestore',body:'GCP Console → Firestore → Create Native Mode database. Collections: <code>consultation_requests</code>, <code>schedules</code>. Grant Cloud Run service account Firestore read/write in IAM.'},
-      {n:5,title:'Set up Cloud Scheduler',body:`<pre>gcloud scheduler jobs create http nightly-reschedule \\\n  --schedule="0 6 * * 1-5" \\\n  --uri="https://YOUR-SERVICE-URL/reschedule" \\\n  --http-method=POST</pre>`},
-      {n:6,title:'Deploy frontend to GitHub Pages',body:'Host <code>index.html</code> on GitHub Pages (see GitHub guide). Update API endpoint in the JS config to point to your Cloud Run URL.'},
-    ],
-    note:'✅ Always-free: Cloud Run (2M requests/month), Firestore (1GB), Cloud Scheduler (3 jobs). Best for institutional deployment.'
-  },
-  render:{
-    title:'Render.com (Beginner-Friendly)',
-    steps:[
-      {n:1,title:'Push code to GitHub',body:'Create a GitHub repo with <code>index.html</code>, <code>app.py</code>, <code>requirements.txt</code>, and a <code>render.yaml</code> config file.'},
-      {n:2,title:'render.yaml config',body:`<pre>services:\n  - type: web\n    name: agri-scheduler\n    env: python\n    buildCommand: pip install -r requirements.txt\n    startCommand: gunicorn app:app\n    envVars:\n      - key: PYTHON_VERSION\n        value: 3.11.0\n\ndatabases:\n  - name: agri-db\n    databaseName: agri_scheduler\n    user: agri_user</pre>`},
-      {n:3,title:'Create Render account',body:'Go to <a href="https://render.com" target="_blank" style="color:var(--sage)">render.com</a> → Sign up with GitHub → New Web Service → select your repo.'},
-      {n:4,title:'Configure and deploy',body:'Render auto-detects Python. Set environment variables (SendGrid key) in the Environment tab. Click Deploy. Live in ~5 minutes.'},
-      {n:5,title:'Add free PostgreSQL',body:'Render Dashboard → New → PostgreSQL → Free plan (90-day free, then $7/month). Copy the Internal Database URL into your web service env vars.'},
-    ],
-    note:'⚠️ Free web services spin down after 15 min of inactivity (cold start ~30 sec). Fine for research use. PostgreSQL free for 90 days.'
-  },
-  aws:{
-    title:'AWS Free Tier (12-Month Free)',
-    steps:[
-      {n:1,title:'Create AWS account',body:'Go to <a href="https://aws.amazon.com/free" target="_blank" style="color:var(--sage)">aws.amazon.com/free</a> → create account → the free tier includes Lambda (1M calls/month), DynamoDB (25GB), API Gateway (1M calls/month).'},
-      {n:2,title:'Deploy with AWS SAM',body:`<pre><span class="c"># template.yaml</span>\n<span class="k">AWSTemplateFormatVersion</span>: '2010-09-09'\n<span class="k">Transform</span>: AWS::Serverless-2016-10-31\n<span class="k">Resources</span>:\n  AgriSchedulerFunction:\n    <span class="k">Type</span>: AWS::Serverless::Function\n    <span class="k">Properties</span>:\n      <span class="k">Handler</span>: app.lambda_handler\n      <span class="k">Runtime</span>: python3.11\n      <span class="k">Events</span>:\n        Api:\n          <span class="k">Type</span>: Api\n          <span class="k">Properties</span>:\n            <span class="k">Path</span>: /schedule\n            <span class="k">Method</span>: post</pre>`},
-      {n:3,title:'Install AWS SAM CLI & deploy',body:`<pre>pip install aws-sam-cli\nsam build\nsam deploy --guided</pre>`},
-      {n:4,title:'Set up DynamoDB table',body:'AWS Console → DynamoDB → Create Table → name: <code>consultation_requests</code> → partition key: <code>id</code> (String). Free tier: 25 GB storage, 25 read/write capacity units.'},
-      {n:5,title:'Configure EventBridge for nightly re-opt',body:'AWS Console → EventBridge → Create Rule → Schedule: <code>cron(0 6 ? * MON-FRI *)</code> → Target: Lambda function (optimizer).'},
-    ],
-    note:'✅ Most powerful free tier. Lambda + DynamoDB scale to hundreds of scientists. 12-month free then minimal pay-as-you-go costs.'
-  },
-  netlify:{
-    title:'Netlify (Serverless Functions)',
-    steps:[
-      {n:1,title:'Prepare project structure',body:`<pre>agri-scheduler/\n├── index.html        <span class="c"># this file</span>\n├── netlify.toml      <span class="c"># config</span>\n└── netlify/\n    └── functions/\n        └── schedule.js  <span class="c"># serverless optimizer</span></pre>`},
-      {n:2,title:'netlify.toml',body:`<pre>[build]\n  publish = "."\n  functions = "netlify/functions"\n\n[[redirects]]\n  from = "/api/*"\n  to = "/.netlify/functions/:splat"\n  status = 200</pre>`},
-      {n:3,title:'Create Netlify account & deploy',body:'Go to <a href="https://netlify.com" target="_blank" style="color:var(--sage)">netlify.com</a> → Sign up with GitHub → New site from Git → select your repo → Deploy site. Live in 2 minutes.'},
-      {n:4,title:'Serverless optimizer function',body:`<pre><span class="c">// netlify/functions/schedule.js</span>\nexports.handler = async (event) => {\n  const requests = JSON.parse(event.body).requests;\n  <span class="c">// Run EDF heuristic in JavaScript</span>\n  const schedule = runEDF(requests);\n  <span class="k">return</span> { statusCode: 200, body: JSON.stringify(schedule) };\n};</pre>`},
-      {n:5,title:'Set environment variables',body:'Netlify Dashboard → Site Settings → Environment Variables → add <code>SENDGRID_API_KEY</code> and any other secrets.'},
-    ],
-    note:'✅ Free tier: 100GB bandwidth, 125,000 function calls/month, unlimited sites. Perfect for academic research groups.'
-  }
+const deployGuides={
+  github:{title:'GitHub Pages (Static — Easiest)',steps:[{n:1,title:'Save this file',body:'Save this HTML file as <code>index.html</code> on your computer.'},{n:2,title:'Create a GitHub repository',body:'Go to <a href="https://github.com/new" target="_blank" style="color:var(--sage)">github.com/new</a>, create a public repo.'},{n:3,title:'Upload your file',body:'Click "Add file" → "Upload files" → drag <code>index.html</code> → "Commit changes".'},{n:4,title:'Enable GitHub Pages',body:'Settings → Pages → Branch: <code>main</code> → folder: <code>/ (root)</code> → Save.'},{n:5,title:'Done!',body:'Live at <code>https://YOUR-USERNAME.github.io/agri-scheduler</code>. Data is saved in localStorage automatically.'}],note:'✅ Data now persists in your browser localStorage — requests survive page reload and browser restart on the same device.'},
+  railway:{title:'Railway.app (Full-Stack + Database)',steps:[{n:1,title:'Project files',body:'Create: <code>index.html</code>, <code>app.py</code>, <code>requirements.txt</code>.'},{n:2,title:'app.py',body:`<pre><span class="k">from</span> flask <span class="k">import</span> Flask, request, jsonify\n<span class="k">from</span> flask_cors <span class="k">import</span> CORS\napp=Flask(__name__)\nCORS(app)\n@app.<span class="f">route</span>(<span class="s">'/schedule'</span>,methods=[<span class="s">'POST'</span>])\n<span class="k">def</span> <span class="f">optimize</span>():\n    data=request.json[<span class="s">'requests'</span>]\n    <span class="k">return</span> jsonify(run_edf(data))\n<span class="k">if</span> __name__==<span class="s">'__main__'</span>:app.<span class="f">run</span>(port=5000)</pre>`},{n:3,title:'Deploy',body:'<a href="https://railway.app" target="_blank" style="color:var(--sage)">railway.app</a> → New Project → Deploy from GitHub.'},{n:4,title:'Add PostgreSQL',body:'Railway dashboard → New Plugin → PostgreSQL. Copy DATABASE_URL to your app.'}],note:'✅ Free $5/month credit. PostgreSQL stores all data persistently across all devices and browsers.'},
+  gcp:{title:'Google Cloud Platform',steps:[{n:1,title:'Create project',body:'<a href="https://console.cloud.google.com" target="_blank" style="color:var(--sage)">console.cloud.google.com</a> → New Project. Enable Cloud Run, Firestore, Cloud Scheduler.'},{n:2,title:'Dockerfile',body:`<pre><span class="k">FROM</span> python:3.11-slim\n<span class="k">WORKDIR</span> /app\n<span class="k">COPY</span> . .\n<span class="k">RUN</span> pip install -r requirements.txt\n<span class="k">CMD</span> ["uvicorn","main:app","--host","0.0.0.0","--port","8080"]</pre>`},{n:3,title:'Deploy',body:`<pre>gcloud builds submit --tag gcr.io/PROJECT_ID/agri-scheduler\ngcloud run deploy agri-scheduler --image gcr.io/PROJECT_ID/agri-scheduler --allow-unauthenticated</pre>`},{n:4,title:'Firestore',body:'GCP Console → Firestore → Create Native Mode database.'},{n:5,title:'Scheduler',body:`<pre>gcloud scheduler jobs create http nightly --schedule="0 6 * * 1-5" --uri="YOUR-URL/reschedule"</pre>`}],note:'✅ Always-free: Cloud Run 2M req/month, Firestore 1GB, 3 Scheduler jobs.'},
+  render:{title:'Render.com',steps:[{n:1,title:'Push to GitHub',body:'Repo with <code>index.html</code>, <code>app.py</code>, <code>requirements.txt</code>.'},{n:2,title:'render.yaml',body:`<pre>services:\n  - type: web\n    name: agri-scheduler\n    env: python\n    startCommand: gunicorn app:app\ndatabases:\n  - name: agri-db</pre>`},{n:3,title:'Deploy',body:'<a href="https://render.com" target="_blank" style="color:var(--sage)">render.com</a> → New Web Service → select repo → Deploy.'}],note:'⚠️ Free services spin down after 15 min inactivity. PostgreSQL free 90 days.'},
+  aws:{title:'AWS Free Tier',steps:[{n:1,title:'Create account',body:'<a href="https://aws.amazon.com/free" target="_blank" style="color:var(--sage)">aws.amazon.com/free</a> — Lambda 1M calls/month, DynamoDB 25GB free.'},{n:2,title:'SAM deploy',body:`<pre>pip install aws-sam-cli\nsam build && sam deploy --guided</pre>`},{n:3,title:'DynamoDB',body:'Console → DynamoDB → Create Table → name: <code>consultation_requests</code>.'},{n:4,title:'EventBridge',body:'Schedule: <code>cron(0 6 ? * MON-FRI *)</code> → Lambda optimizer.'}],note:'✅ Most powerful free tier. 12-month free then pay-as-you-go.'},
+  netlify:{title:'Netlify',steps:[{n:1,title:'Structure',body:`<pre>project/\n├── index.html\n├── netlify.toml\n└── netlify/functions/schedule.js</pre>`},{n:2,title:'netlify.toml',body:`<pre>[build]\n  publish="."\n  functions="netlify/functions"</pre>`},{n:3,title:'Deploy',body:'<a href="https://netlify.com" target="_blank" style="color:var(--sage)">netlify.com</a> → New site from Git → Deploy.'},{n:4,title:'Function',body:`<pre>exports.handler=async(e)=>({statusCode:200,body:JSON.stringify(runEDF(JSON.parse(e.body).requests))});</pre>`}],note:'✅ Free: 100GB bandwidth, 125k function calls/month.'}
 };
 
 function renderDeploy(key){
-  const g=deployGuides[key];
-  if(!g) return;
-  document.getElementById('deploy-steps').innerHTML=`
-    <div class="form-section">
-      <h3>${g.title}</h3>
-      ${g.steps.map(s=>`
-        <div class="deploy-step">
-          <div class="step-num">${s.n}</div>
-          <div class="step-body"><h4>${s.title}</h4><p>${s.body}</p></div>
-        </div>`).join('')}
-      <div class="alert alert-info" style="margin-top:.5rem"><span class="alert-icon">ℹ</span>${g.note}</div>
-    </div>`;
+  const g=deployGuides[key];if(!g)return;
+  document.getElementById('deploy-steps').innerHTML=`<div class="form-section"><h3>${g.title}</h3>${g.steps.map(s=>`<div class="deploy-step"><div class="step-num">${s.n}</div><div class="step-body"><h4>${s.title}</h4><p>${s.body}</p></div></div>`).join('')}<div class="alert alert-info" style="margin-top:.5rem"><span class="alert-icon">ℹ</span>${g.note}</div></div>`;
 }
 
 // ═══════════════════════════════════════════════════════════════
-// INIT
+// ✅ INIT — restore saved data on page load
 // ═══════════════════════════════════════════════════════════════
-document.getElementById('cons-deadline').valueAsDate = new Date(Date.now()+5*86400000);
+document.getElementById('cons-deadline').valueAsDate=new Date(Date.now()+5*86400000);
 renderDeploy('github');
+
+if(requests.length){
+  renderRequests();
+  updateBadge();
+  showNotif(`💾 ${requests.length} saved request${requests.length>1?'s':''} restored automatically.`,'ok');
+}
 updateDashboard();
 </script>
 </body>
